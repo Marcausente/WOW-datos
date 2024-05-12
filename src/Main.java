@@ -23,7 +23,7 @@ public class Main {
         listadungeons[11] = new dungeon("Monasterio Escarlata: Catedral", "Scarlet Monastery: Cathedral", "SM Cath","Claros de Tirisfal",34,45);
         listadungeons[12] = new dungeon("Zahúrda Rajacieno", "Razorfen Down", "RFD","Los Baldios", 37, 46);
         listadungeons[13] = new dungeon("Uldaman", "Uldaman", "Ulda", "Tierras Inhóspitas", 41, 51);
-
+        raid listaraids [] = new raid[25];
         do{
             menu = menu(menu);
             switchgeneral(menu, listadungeons);
