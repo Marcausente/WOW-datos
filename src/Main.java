@@ -1,4 +1,7 @@
+import models.Characters.NPC;
 import models.Dungeons.dungeon;
+import models.Dungeons.raid;
+
 import java.util.Scanner;
 
 public class Main {
@@ -21,9 +24,7 @@ public class Main {
         listadungeons[12] = new dungeon("Zahúrda Rajacieno", "Razorfen Down", "RFD","Los Baldios", 37, 46);
         listadungeons[13] = new dungeon("Uldaman", "Uldaman", "Ulda", "Tierras Inhóspitas", 41, 51);
 
-
         do{
-            hola
             menu = menu(menu);
             switchgeneral(menu, listadungeons);
         }while (menu != 3);
@@ -39,7 +40,6 @@ public class Main {
                 createcharacter();
                 break;
             case 3:
-                System.out.println("Saliendo...");
         }
     }
 
@@ -87,8 +87,7 @@ public class Main {
                 listadungeons[12].datosDungeon();
                 break;
             default:
-                // Manejar el caso en que el valor de menu no esté en el rango esperado
-                // Puedes imprimir un mensaje de error o tomar otra acción apropiada.
+                System.out.println("El numero introducido no es valido, intentalo con otro");
                 break;
         }
     }
@@ -97,6 +96,7 @@ public class Main {
     }
 
     private static void infomazmorras(dungeon[] listadungeons) {
+
         System.out.println("Lista de mazmorras wow classic");
         for (int i = 0; i < 13; i++) {
             System.out.println(i+1+". "+listadungeons[i].name);

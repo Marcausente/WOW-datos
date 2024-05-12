@@ -16,12 +16,14 @@ public class dungeon {
        this.max_lvl = max_lvl;
    }
    public void datosDungeon(){
-      System.out.println("Nombre de la mazmorra: "+this.name);
-       System.out.println("Nombre en ingles de la mazmorra: "+this.ingname);
-       System.out.println("Abreviatura del nombre: "+this.abreviatura);
-      System.out.println("Localización de la mazmorra: "+this.location);
-       System.out.println("Nivel minimo de entrada: "+this.min_lvl);
-       System.out.println("Nivel maximo de estancia: "+this.max_lvl);
+       String green =  "\u001B[32m";
+       String resetColorCode = "\u001B[0m";
+      System.out.println(green+"Nombre de la mazmorra: "+resetColorCode+this.name);
+       System.out.println(green+"Nombre en ingles de la mazmorra: "+resetColorCode+this.ingname);
+       System.out.println(green+"Abreviatura del nombre: "+resetColorCode+this.abreviatura);
+      System.out.println(green+"Localización de la mazmorra: "+resetColorCode+this.location);
+       System.out.println(green+"Nivel minimo de entrada: "+resetColorCode+this.min_lvl);
+       System.out.println(green+"Nivel maximo de estancia: "+resetColorCode+this.max_lvl);
    }
 }
 
