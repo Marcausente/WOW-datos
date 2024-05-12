@@ -23,6 +23,7 @@ public class Main {
 
 
         do{
+            hola
             menu = menu(menu);
             switchgeneral(menu, listadungeons);
         }while (menu != 3);
