@@ -225,7 +225,7 @@ public class Main {
         try {
             menu = input.nextInt();
         }catch (Exception a){
-            System.out.println("Introduce un caracter valido");
+            System.out.println("Introduce un caracter que sea valido");
         }
         return menu;
     }
