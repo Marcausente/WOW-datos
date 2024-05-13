@@ -8,7 +8,7 @@ public class Main {
     public static Scanner input;
     public static void main(String[] args) {
         int menu = 0;
-        dungeon listadungeons [] = new dungeon[25];
+        dungeon listadungeons [] = new dungeon[26];
         listadungeons[0] = new dungeon("Sima Ignea", "Ragefire Chasm","RFC", "Orgrimmar", 13, 18);
         listadungeons[1] = new dungeon("Minas de la Muerte", "The Deadmines","Paramos de poniente", "TDM", 17, 24);
         listadungeons[2] = new dungeon("Cueva de los lamentos", "Wailing Caverns", "WC", "Los Baldio", 17, 24);
@@ -23,7 +23,18 @@ public class Main {
         listadungeons[11] = new dungeon("Monasterio Escarlata: Catedral", "Scarlet Monastery: Cathedral", "SM Cath","Claros de Tirisfal",34,45);
         listadungeons[12] = new dungeon("Zahúrda Rajacieno", "Razorfen Down", "RFD","Los Baldios", 37, 46);
         listadungeons[13] = new dungeon("Uldaman", "Uldaman", "Ulda", "Tierras Inhóspitas", 41, 51);
-        listadungeons[14] = new dungeon();
+        listadungeons[14] = new dungeon("Zul'Farral", "Zul'Farrak", "ZF", "Tanaris", 42, 46);
+        listadungeons[15] = new dungeon("Maraudon", "Maraudon", "Mara", "Desolace", 46, 55);
+        listadungeons[16] = new dungeon("Templo de Atal'Hakkar", "Sunken Temple", "ST", "Pantano de las penas", 50, 56);
+        listadungeons[17] = new dungeon("Profundidades Roca negra", "Blackrock Depths", "BRD", "Las Estepas Ardientes", 52, 60);
+        listadungeons[18] = new dungeon("Cumbre Roca Negra Inferior", "Lower Blackrock Spire", "LBRS", "Las Estepas Ardientes", 55, 60);
+        listadungeons[19] = new dungeon("Cumbre Roca Negra Inferior", "Upper Blackrock Spire", "UBRD", "Las Estepas Ardientes", 55, 60);
+        listadungeons[20] = new dungeon("La Masacre: Este y Oeste", "Dire Maul Est/West", "DM E/W", "Feralas", 55, 60);
+        listadungeons[21] = new dungeon("La Masacre: Norte", "Dire Maul: Tribute Run", "DM: Tribute Run", "Feralas", 55, 60);
+        listadungeons[22] = new dungeon("Stratholme Escarlata", "Stratholme: Scarlet", "Strath Scarlet", "Tierras de la Peste del Este", 58, 60);
+        listadungeons[23] = new dungeon("Stratholme No-Muerto", "Stratholme: Undeath", "Strath UD", "Tierras de la Peste del Este", 58, 60);
+        listadungeons[24] = new dungeon("Scholomance", "Scholomance", "Scholo", "Tierras de la Peste del Oeste", 58, 60);
+        listadungeons[25] = new dungeon();
         raid listaraids [] = new raid[25];
         do{
             menu = menu(menu);
@@ -100,6 +111,56 @@ public class Main {
                 listadungeons[12].datosDungeon();
                 listadungeons[12].mostrarNivelRecomendado();
                 break;
+            case 14:
+                listadungeons[13].datosDungeon();
+                listadungeons[13].mostrarNivelRecomendado();
+                break;
+            case 15:
+                listadungeons[14].datosDungeon();
+                listadungeons[14].mostrarNivelRecomendado();
+                break;
+            case 16:
+                listadungeons[15].datosDungeon();
+                listadungeons[15].mostrarNivelRecomendado();
+                break;
+            case 17:
+                listadungeons[16].datosDungeon();
+                listadungeons[16].mostrarNivelRecomendado();
+                break;
+            case 18:
+                listadungeons[17].datosDungeon();
+                listadungeons[17].mostrarNivelRecomendado();
+                break;
+            case 19:
+                listadungeons[18].datosDungeon();
+                listadungeons[18].mostrarNivelRecomendado();
+                break;
+            case 20:
+                listadungeons[19].datosDungeon();
+                listadungeons[19].mostrarNivelRecomendado();
+                break;
+            case 21:
+                listadungeons[20].datosDungeon();
+                listadungeons[20].mostrarNivelRecomendado();
+                break;
+            case 22:
+                listadungeons[21].datosDungeon();
+                listadungeons[21].mostrarNivelRecomendado();
+                break;
+            case 23:
+                listadungeons[22].datosDungeon();
+                listadungeons[22].mostrarNivelRecomendado();
+                break;
+            case 24:
+                listadungeons[23].datosDungeon();
+                listadungeons[23].mostrarNivelRecomendado();
+                break;
+            case 25:
+                listadungeons[24].datosDungeon();
+                listadungeons[24].mostrarNivelRecomendado();
+                listadungeons[25].setName("Murallas de fuego infernal");
+                System.out.println(listadungeons[25].name);
+                break;
             default:
                 System.out.println("El numero introducido no es valido, intentalo con otro");
                 break;
@@ -112,7 +173,7 @@ public class Main {
     private static void infomazmorras(dungeon[] listadungeons) {
 
         System.out.println("Lista de mazmorras wow classic");
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i < 25; i++) {
             System.out.println(i+1+". "+listadungeons[i].name);
         }
     }
