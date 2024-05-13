@@ -1,16 +1,19 @@
 package models.Characters;
+import java.io.*;
 
-public class Player extends Character {
+
+public class Player extends Character{
     String clase;
     String Faccion;
 
-    public Player(){
-
-    }
-    public Player(String name, String type, int lvl, String clase, String Faccion) {
+    public Player(String name, String type, int lvl, String clase, String Faccion) throws IOException {
         super(name, type, lvl);
         this.clase = clase;
         this.Faccion = Faccion;
+    }
+
+    public Player() {
+
     }
 
     public void setClase(String clase) {
@@ -18,6 +21,6 @@ public class Player extends Character {
     }
 
     public void setFaccion(String faccion) {
-        Faccion = faccion;
+        this.Faccion = faccion;
     }
 }

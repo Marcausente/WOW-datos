@@ -4,10 +4,11 @@ import models.Dungeons.dungeon;
 import models.Dungeons.raid;
 
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
     public static Scanner input;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int menu = 0;
         dungeon listadungeons [] = new dungeon[26];
         listadungeons[0] = new dungeon("Sima Ignea", "Ragefire Chasm","RFC", "Orgrimmar", 13, 18);
@@ -44,7 +45,7 @@ public class Main {
         }while (menu != 3);
     }
 
-    private static void switchgeneral(int menu, dungeon[] listadungeons) {
+    private static void switchgeneral(int menu, dungeon[] listadungeons) throws IOException {
         switch (menu){
             case 1:
                 infomazmorras(listadungeons);
@@ -173,13 +174,13 @@ public class Main {
         }
     }
 
-    private static void createcharacter() {
+    private static void createcharacter() throws IOException {
         Player personaje = new Player();
         introducirnombre(personaje);
         personaje.VerDatos();
     }
 
-    private static void introducirnombre(Player personaje) {
+    private static void introducirnombre(Player personaje) throws IOException {
         Scanner input = new Scanner(System.in);
         String nombre;
         System.out.println("Introduce el nombre del personaje");
@@ -187,6 +188,19 @@ public class Main {
         personaje.setLvl(1);
         personaje.setType("Humanoide");
         personaje.setName(nombre);
+        pasaratexto(personaje);
+    }
+
+    private static void pasaratexto(Player personaje)throws IOException {
+        try {
+            FileWriter escritor = new FileWriter("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Characters\\personaje.txt");
+            escritor.write(" Nombre: "+personaje.getName());
+            escritor.write("| Nivel: "+personaje.getLvl());
+            escritor.write("| Tipo: "+personaje.getType());
+            escritor.close();
+        }catch (FileNotFoundException a){
+            System.out.println("ERROR: "+a.getMessage());
+        }
     }
 
     private static void infomazmorras(dungeon[] listadungeons) {

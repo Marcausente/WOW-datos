@@ -1,6 +1,8 @@
 package models.Characters;
 
-public class Character {
+import java.lang.reflect.Type;
+
+public abstract class Character {
     int lvl;
     String type;
     String name;
@@ -34,6 +36,12 @@ public class Character {
 
     public String getName() {
         return name;
+    }
+    public int getLvl(){
+        return lvl;
+    }
+    public String getType(){
+        return type;
     }
 }
 
