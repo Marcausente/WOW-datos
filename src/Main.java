@@ -1,4 +1,5 @@
-import models.Characters.NPC;
+import com.sun.jdi.request.ExceptionRequest;
+import models.Characters.Player;
 import models.Dungeons.dungeon;
 import models.Dungeons.raid;
 
@@ -36,6 +37,7 @@ public class Main {
         listadungeons[24] = new dungeon("Scholomance", "Scholomance", "Scholo", "Tierras de la Peste del Oeste", 58, 60);
         listadungeons[25] = new dungeon();
         raid listaraids [] = new raid[25];
+
         do{
             menu = menu(menu);
             switchgeneral(menu, listadungeons);
@@ -57,7 +59,8 @@ public class Main {
 
     private static void dardatos(dungeon[] listadungeons, int menu) {
         Scanner input = new Scanner(System.in);
-        menu = input.nextInt();
+        try {
+            menu = input.nextInt();
         switch (menu) {
             case 1:
                 listadungeons[0].datosDungeon();
@@ -165,9 +168,25 @@ public class Main {
                 System.out.println("El numero introducido no es valido, intentalo con otro");
                 break;
         }
+        }catch (Exception e){
+            System.out.println();
+        }
     }
 
     private static void createcharacter() {
+        Player personaje = new Player();
+        introducirnombre(personaje);
+        personaje.VerDatos();
+    }
+
+    private static void introducirnombre(Player personaje) {
+        Scanner input = new Scanner(System.in);
+        String nombre;
+        System.out.println("Introduce el nombre del personaje");
+        nombre = input.nextLine();
+        personaje.setLvl(1);
+        personaje.setType("Humanoide");
+        personaje.setName(nombre);
     }
 
     private static void infomazmorras(dungeon[] listadungeons) {
@@ -189,7 +208,11 @@ public class Main {
         System.out.println("1. Info Mazmorras");
         System.out.println("2. Creación personaje");
         System.out.println("3. Salir");
-        menu = input.nextInt();
+        try {
+            menu = input.nextInt();
+        }catch (Exception a){
+            System.out.println("Introduce un caracter valido");
+        }
         return menu;
     }
 }
