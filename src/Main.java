@@ -385,7 +385,7 @@ public class Main {
     }
 
     private static void elegirclase(Player personaje) {
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); //Seleccion de clase para el atributo class de la clase Player, simplemente un menu que te hace un setClase depende de lo que eligas
         int menu = 0;
         System.out.println("Elige la clase del personaje: ");
         System.out.println("1. Guerrero");
