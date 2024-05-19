@@ -299,15 +299,55 @@ public class Main {
     private static void elegirfaccion(Player personaje) {
         Scanner input = new Scanner(System.in);
         int menu = 0;
+        menu = input.nextInt();
         System.out.println("Elige la facción del personaje");
         System.out.println("1. Alianza");
         System.out.println("2. Horda");
         if(menu==1){
             personaje.setFaccion("Alianza");
+            elegirrazaalianza(personaje);
         }else if (menu == 2){
             personaje.setFaccion("Horda");
+            elegirrazahorda(personaje);
         }else{
             System.out.println("Error, selecciona una opcion valida");
+        }
+    }
+
+    private static void elegirrazaalianza(Player personaje) {
+        Scanner input = new Scanner(System.in);
+        int menu = 0;
+        System.out.println("Elige la raza del personaje: ");
+        System.out.println("1. Humano");
+        System.out.println("2. Enano");
+        System.out.println("3. Gnomo");
+        System.out.println("4. Elfo de la noche");
+    }
+
+    private static void elegirrazahorda(Player personaje) {
+        Scanner input = new Scanner(System.in);
+        int menu = 0;
+        System.out.println("Elige la raza del personaje: ");
+        System.out.println("1. Orco");
+        System.out.println("2. No-Muerto");
+        System.out.println("3. Tauren");
+        System.out.println("4. Troll");
+        menu = input.nextInt();
+        switch (menu){
+            case 1:
+                personaje.setRaza();
+                break;
+            case 2:
+                personaje.setRaza();
+                break;
+            case 3:
+                personaje.setRaza();
+                break;
+            case 4:
+                personaje.setRaza();
+                break;
+            default:
+                System.out.println("ERROR, elige un numero valido");
         }
     }
 

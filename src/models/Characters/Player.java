@@ -25,6 +25,8 @@ public class Player extends Character{
     public void setFaccion(String faccion) {
         this.Faccion = faccion;
     }
+
+    public void setRaza(String raza) { this.raza = raza}
     public void VerDatos() {
         System.out.println("El nivel es: "+this.lvl);
         System.out.println("El personaje es: "+this.type);
