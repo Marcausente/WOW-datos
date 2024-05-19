@@ -434,7 +434,7 @@ public class Main {
 
 
     private static void pasaratexto(Player personaje)throws IOException {
-        try {
+        try { //Añade la informacion de la elecciones de la creacion del personaje al arhcivo personaje.txt, esta se puede sobreescribir ya que solo se cuenta con un personaje, se separa por lineas
             BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Characters\\personaje.txt"));
             writer.write("Nombre: " + personaje.getName() + "\n");
             writer.write("Tipo: " + personaje.getType() + "\n");
