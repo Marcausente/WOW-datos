@@ -359,7 +359,7 @@ public class Main {
     private static void elegirrazahorda(Player personaje) {
         Scanner input = new Scanner(System.in);
         int menu = 0;
-        System.out.println("Elige la raza del personaje: ");
+        System.out.println("Elige la raza del personaje: "); //Razas de personaje de la horda
         System.out.println("1. Orco");
         System.out.println("2. No-Muerto");
         System.out.println("3. Tauren");
