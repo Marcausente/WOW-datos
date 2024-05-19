@@ -12,22 +12,23 @@ import java.io.*;
 
 public class Main {
     public static Scanner input;
+
     public static void main(String[] args) throws IOException {
         int menu = 0;
-        dungeon listadungeons [] = new dungeon[26];
-        listadungeons[0] = new dungeon("Sima Ignea", "Ragefire Chasm","RFC", "Orgrimmar", 13, 18);
-        listadungeons[1] = new dungeon("Minas de la Muerte", "The Deadmines","Paramos de poniente", "TDM", 17, 24);
+        dungeon listadungeons[] = new dungeon[26]; //Declaracion es este caso de la listadungeons, en las dungeons hascemos un array normal y lo declaramos todo desde el constructor
+        listadungeons[0] = new dungeon("Sima Ignea", "Ragefire Chasm", "RFC", "Orgrimmar", 13, 18);
+        listadungeons[1] = new dungeon("Minas de la Muerte", "The Deadmines", "Paramos de poniente", "TDM", 17, 24);
         listadungeons[2] = new dungeon("Cueva de los lamentos", "Wailing Caverns", "WC", "Los Baldio", 17, 24);
         listadungeons[3] = new dungeon("Caverna Brazanegra", "Blackfathom Deeps", "BFD", "Vallefresno", 24, 32);
         listadungeons[4] = new dungeon("Castillo del Colmillo Oscuro", "Shadowfang Keep", "SFK", "Bosque de Argénteos", 22, 30);
-        listadungeons[5] = new dungeon("Las Mazmorrass", "The Stockade","Stockades", "Ventormenta", 24, 32);
-        listadungeons[6] = new dungeon("Horado Rajacieno", "Razorfen Kraul", "RFK","Los Baldios",29,38);
-        listadungeons[7] = new dungeon("Gnomeregan", "Gnomeregan", "Gnomeregan","Dun Morogh",29,38);
-        listadungeons[8] = new dungeon("Monasterio Escarlata: Cementerio", "Scarlet Monastery: Graveyard", "SM.GY","Claros de Tirisfal",34,45);
-        listadungeons[9] = new dungeon("Monasterio Escarlata: Biblioteca", "Scarlet Monastery: Library", "SM Lib","Claros de Tirisfal",34,45);
-        listadungeons[10] = new dungeon("Monasterio Escarlata: Armeria", "Scarlet Monastery: Armory", "SM Arm","Claros de Tirisfal",34,45);
-        listadungeons[11] = new dungeon("Monasterio Escarlata: Catedral", "Scarlet Monastery: Cathedral", "SM Cath","Claros de Tirisfal",34,45);
-        listadungeons[12] = new dungeon("Zahúrda Rajacieno", "Razorfen Down", "RFD","Los Baldios", 37, 46);
+        listadungeons[5] = new dungeon("Las Mazmorrass", "The Stockade", "Stockades", "Ventormenta", 24, 32);
+        listadungeons[6] = new dungeon("Horado Rajacieno", "Razorfen Kraul", "RFK", "Los Baldios", 29, 38);
+        listadungeons[7] = new dungeon("Gnomeregan", "Gnomeregan", "Gnomeregan", "Dun Morogh", 29, 38);
+        listadungeons[8] = new dungeon("Monasterio Escarlata: Cementerio", "Scarlet Monastery: Graveyard", "SM.GY", "Claros de Tirisfal", 34, 45);
+        listadungeons[9] = new dungeon("Monasterio Escarlata: Biblioteca", "Scarlet Monastery: Library", "SM Lib", "Claros de Tirisfal", 34, 45);
+        listadungeons[10] = new dungeon("Monasterio Escarlata: Armeria", "Scarlet Monastery: Armory", "SM Arm", "Claros de Tirisfal", 34, 45);
+        listadungeons[11] = new dungeon("Monasterio Escarlata: Catedral", "Scarlet Monastery: Cathedral", "SM Cath", "Claros de Tirisfal", 34, 45);
+        listadungeons[12] = new dungeon("Zahúrda Rajacieno", "Razorfen Down", "RFD", "Los Baldios", 37, 46);
         listadungeons[13] = new dungeon("Uldaman", "Uldaman", "Ulda", "Tierras Inhóspitas", 41, 51);
         listadungeons[14] = new dungeon("Zul'Farral", "Zul'Farrak", "ZF", "Tanaris", 42, 46);
         listadungeons[15] = new dungeon("Maraudon", "Maraudon", "Mara", "Desolace", 46, 55);
@@ -41,7 +42,7 @@ public class Main {
         listadungeons[23] = new dungeon("Stratholme No-Muerto", "Stratholme: Undeath", "Strath UD", "Tierras de la Peste del Este", 58, 60);
         listadungeons[24] = new dungeon("Scholomance", "Scholomance", "Scholo", "Tierras de la Peste del Oeste", 58, 60);
         listadungeons[25] = new dungeon();
-        //Creamos los objetos del Array raid, estos estan en el txt raidsinfo.txt
+        //Creamos los objetos del Array list raid, estos estan en el txt raidsinfo.txt, a diferencia de las dungeon que hay al inicio
         String filePath = "C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Dungeons\\raidsinfo.txt";
         List<raid> raids = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Dungeons\\raidsinfo.txt"))) {
@@ -57,20 +58,21 @@ public class Main {
         } catch (IOException e) {
             System.err.println("Error al leer el archivo: " + e.getMessage());
         }
-        do{
+        do {
             menu = menu(menu);
             switchgeneral(menu, listadungeons, raids);
-        }while (menu != 4);
+        } while (menu != 4);
     }
+
     private static void switchgeneral(int menu, dungeon[] listadungeons, List<raid> raids) throws IOException {
-        switch (menu){
+        switch (menu) {
             case 1:
                 infomazmorras(listadungeons);
                 dardatos(listadungeons, menu);
                 break;
             case 2:
                 inforaids(raids, menu);
-                dardatosraid(raids,menu);
+                dardatosraid(raids, menu);
                 break;
             case 3:
                 createcharacter();
@@ -85,9 +87,9 @@ public class Main {
 
     private static void dardatosraid(List<raid> raids, int menu) {
         Scanner input = new Scanner(System.in);
-        try{
+        try {
             menu = input.nextInt();
-            switch (menu){
+            switch (menu) {
                 case 1:
                     datosraid1(raids);
                     break;
@@ -113,10 +115,11 @@ public class Main {
                     System.out.println("ERROR, introduce un caracter correcto");
                     break;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("ERROR");
         }
     }
+
 
     private static void datosraid7(List<raid> raids) {
         raid raid = raids.get(6);
