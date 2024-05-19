@@ -60,7 +60,6 @@ public class Main {
         do{
             menu = menu(menu);
             switchgeneral(menu, listadungeons, raids);
-
         }while (menu != 4);
     }
     private static void switchgeneral(int menu, dungeon[] listadungeons, List<raid> raids) throws IOException {
@@ -89,12 +88,69 @@ public class Main {
         try{
             menu = input.nextInt();
             switch (menu){
-
-
+                case 1:
+                    datosraid1(raids);
+                    break;
+                case 2:
+                    datosraid2(raids);
+                    break;
+                case 3:
+                    datosraid3(raids);
+                    break;
+                case 4:
+                    datosraid4(raids);
+                    break;
+                case 5:
+                    datosraid5(raids);
+                    break;
+                case 6:
+                    datosraid6(raids);
+                    break;
+                case 7:
+                    datosraid7(raids);
+                    break;
+                default:
+                    System.out.println("ERROR, introduce un caracter correcto");
+                    break;
             }
         }catch (Exception e){
-            System.out.println();
+            System.out.println("ERROR");
         }
+    }
+
+    private static void datosraid7(List<raid> raids) {
+        raid raid = raids.get(6);
+        raid.datosRaid();
+    }
+
+    private static void datosraid6(List<raid> raids) {
+        raid raid = raids.get(5);
+        raid.datosRaid();
+    }
+
+    private static void datosraid5(List<raid> raids) {
+        raid raid = raids.get(4);
+        raid.datosRaid();
+    }
+
+    private static void datosraid4(List<raid> raids) {
+        raid raid = raids.get(3);
+        raid.datosRaid();
+    }
+
+    private static void datosraid3(List<raid> raids) {
+        raid raid = raids.get(2);
+        raid.datosRaid();
+    }
+
+    private static void datosraid2(List<raid> raids) {
+        raid raid = raids.get(1);
+        raid.datosRaid();
+    }
+
+    private static void datosraid1(List<raid> raids) {
+        raid raid = raids.get(0);
+        raid.datosRaid();
     }
 
     private static void inforaids(List<raid> raids, int menu) {
@@ -232,11 +288,44 @@ public class Main {
         String nombre;
         System.out.println("Introduce el nombre del personaje");
         nombre = input.nextLine();
+        elegirclase(personaje);
         personaje.setLvl(1);
         personaje.setType("Humanoide");
         personaje.setName(nombre);
         pasaratexto(personaje);
     }
+
+    private static void elegirclase(Player personaje) {
+        Scanner input = new Scanner(System.in);
+        int menu = 0;
+        System.out.println("1. Guerrero");
+        System.out.println("2. Paladin");
+        System.out.println("3. Cazador");
+        System.out.println("4. Picaro");
+        System.out.println("5. Sacerdote");
+        System.out.println("6. Chaman");
+        System.out.println("7. Druida");
+        System.out.println("8. Mago");
+        System.out.println("9. Br8jo");
+        menu = input.nextInt();
+        switch (menu){
+            case 1:
+                personaje.setClase("Guerrero");
+            case 2:
+                personaje.setClase("Paladin");
+            case 3:
+                personaje.setClase("Cazador");
+            case 4:
+                personaje.setClase("Picaro");
+            case 5:
+                personaje.setClase("Sacerdote");
+            case 6:
+                personaje.setClase("Chaman");
+            case 7:
+                personaje.setClase("");
+        }
+    }
+
 
     private static void pasaratexto(Player personaje)throws IOException {
         try {
