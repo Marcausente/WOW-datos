@@ -1,6 +1,6 @@
-Nombre: Luis
+Nombre: Pepe
 Tipo: Humanoide
 Nivel: 1
-Clase: Picaro
+Clase: Paladin
 Facción: Alianza
-Raza: Enano
+Raza: Humano

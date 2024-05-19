@@ -294,6 +294,17 @@ public class Main {
         personaje.setType("Humanoide");
         personaje.setName(nombre);
         pasaratexto(personaje);
+        pasarabinario(personaje);
+    }
+
+    private static void pasarabinario(Player personaje) throws IOException {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Characters\\personaje.data"))) {
+            outputStream.writeObject(personaje);
+            System.out.println("Datos del personaje guardados en el archivo personaje.data");
+        } catch (IOException e) {
+            System.out.println("Error al guardar los datos del personaje en el archivo binario.");
+            e.printStackTrace();
+        }
     }
 
     private static void elegirfaccion(Player personaje) {

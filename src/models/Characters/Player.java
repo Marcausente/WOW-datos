@@ -2,7 +2,7 @@ package models.Characters;
 import java.io.*;
 
 
-public class Player extends Character{
+public class Player extends Character implements Serializable{
     String clase;
     String Faccion;
     String raza;
