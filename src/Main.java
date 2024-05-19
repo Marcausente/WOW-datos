@@ -277,7 +277,7 @@ public class Main {
         }
     }
 
-    private static void createcharacter() throws IOException {
+    private static void createcharacter() throws IOException { /*Mediante esto creas a tu personaje, como solo puedes tener un personaje los datos se sustituyen al crear uno nuevo, para dar paso al siguiente. La informacion se guarda en personaje.txt*/
         Player personaje = new Player();
         introducirnombre(personaje);
         personaje.VerDatos();
@@ -289,15 +289,32 @@ public class Main {
         System.out.println("Introduce el nombre del personaje");
         nombre = input.nextLine();
         elegirclase(personaje);
+        elegirfaccion(personaje);
         personaje.setLvl(1);
         personaje.setType("Humanoide");
         personaje.setName(nombre);
         pasaratexto(personaje);
     }
 
+    private static void elegirfaccion(Player personaje) {
+        Scanner input = new Scanner(System.in);
+        int menu = 0;
+        System.out.println("Elige la facción del personaje");
+        System.out.println("1. Alianza");
+        System.out.println("2. Horda");
+        if(menu==1){
+            personaje.setFaccion("Alianza");
+        }else if (menu == 2){
+            personaje.setFaccion("Horda");
+        }else{
+            System.out.println("Error, selecciona una opcion valida");
+        }
+    }
+
     private static void elegirclase(Player personaje) {
         Scanner input = new Scanner(System.in);
         int menu = 0;
+        System.out.println("Elige la clase del personaje: ");
         System.out.println("1. Guerrero");
         System.out.println("2. Paladin");
         System.out.println("3. Cazador");
@@ -306,34 +323,53 @@ public class Main {
         System.out.println("6. Chaman");
         System.out.println("7. Druida");
         System.out.println("8. Mago");
-        System.out.println("9. Br8jo");
+        System.out.println("9. Brujo");
         menu = input.nextInt();
         switch (menu){
             case 1:
                 personaje.setClase("Guerrero");
+                break;
             case 2:
                 personaje.setClase("Paladin");
+                break;
             case 3:
                 personaje.setClase("Cazador");
+                break;
             case 4:
                 personaje.setClase("Picaro");
+                break;
             case 5:
                 personaje.setClase("Sacerdote");
+                break;
             case 6:
                 personaje.setClase("Chaman");
+                break;
             case 7:
-                personaje.setClase("");
+                personaje.setClase("Druida");
+                break;
+            case 8:
+                personaje.setClase("Mago");
+                break;
+            case 9:
+                personaje.setClase("Brujo");
+                break;
+            default:
+                System.out.println("ERROR, elige un caracter valido");
+                break;
         }
     }
 
 
     private static void pasaratexto(Player personaje)throws IOException {
         try {
-            FileWriter escritor = new FileWriter("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Characters\\personaje.txt");
-            escritor.write(" Nombre: "+personaje.getName());
-            escritor.write("| Nivel: "+personaje.getLvl());
-            escritor.write("| Tipo: "+personaje.getType());
-            escritor.close();
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Characters\\personaje.txt"));
+            writer.write("Nombre: " + personaje.getName() + "\n");
+            writer.write("Tipo: " + personaje.getType() + "\n");
+            writer.write("Nivel: " + personaje.getLvl() + "\n");
+            writer.write("Clase: " + personaje.getClase() + "\n");
+            writer.write("Facción: " + personaje.getFaccion() + "\n");
+            writer.write("Raza: " + personaje.getRaza() + "\n");
+            writer.close();
         }catch (FileNotFoundException a){
             System.out.println("ERROR: "+a.getMessage());
         }

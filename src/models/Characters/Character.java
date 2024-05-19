@@ -43,6 +43,7 @@ public abstract class Character {
     public String getType(){
         return type;
     }
+
 }
 
 
