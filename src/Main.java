@@ -166,7 +166,7 @@ public class Main {
 
     private static void dardatos(dungeon[] listadungeons, int menu) {
         Scanner input = new Scanner(System.in);
-        try {
+        try { //Esto es el switch general de los datos de la dungeon ejecuta el datosdungeon de la clase dungeon y a su vez un pequeño aplicativo de la misma clase que hace una media entre los niveles y muestra el recomendando para entrar
             menu = input.nextInt();
         switch (menu) {
             case 1:
