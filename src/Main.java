@@ -293,14 +293,14 @@ public class Main {
         nombre = input.nextLine();
         elegirclase(personaje);
         elegirfaccion(personaje);
-        personaje.setLvl(1);
-        personaje.setType("Humanoide");
-        personaje.setName(nombre);
+        personaje.setLvl(1); //Todos los personajes se setean al nivel 1
+        personaje.setType("Humanoide"); //Todos los personajes son humanoides
+        personaje.setName(nombre); //Pasa el nombre pedido antes a la variable y lo setea a Name de la clase Player derivado de Character
         pasaratexto(personaje);
         pasarabinario(personaje);
     }
 
-    private static void pasarabinario(Player personaje) throws IOException {
+    private static void pasarabinario(Player personaje) throws IOException { //Basciamente pasa los datos de la clase personaje al archivo binario personaje.data
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Characters\\personaje.data"))) {
             outputStream.writeObject(personaje);
             System.out.println("Datos del personaje guardados en el archivo personaje.data");
