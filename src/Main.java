@@ -2,6 +2,11 @@ import com.sun.jdi.request.ExceptionRequest;
 import models.Characters.Player;
 import models.Dungeons.dungeon;
 import models.Dungeons.raid;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.Scanner;
 import java.io.*;
@@ -37,14 +42,34 @@ public class Main {
         listadungeons[23] = new dungeon("Stratholme No-Muerto", "Stratholme: Undeath", "Strath UD", "Tierras de la Peste del Este", 58, 60);
         listadungeons[24] = new dungeon("Scholomance", "Scholomance", "Scholo", "Tierras de la Peste del Oeste", 58, 60);
         listadungeons[25] = new dungeon();
-        raid listaraids [] = new raid[25];
+        //Creamos los objetos del Array raid, estos estan en el txt raidsinfo.txt
+        String filePath = "C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Dungeons\\raidsinfo.txt";
+        List<raid> raids = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(";");
+                if (fields.length == 5) {
+                    String name = fields[0];
+                    String ingname = fields[1];
+                    String abreviatura = fields[2];
+                    String location = fields[3];
+                    int size = Integer.parseInt(fields[4]);
+                    raid raid = new raid(name, ingname, abreviatura, location, size);
+                    raids.add(raid);
+                } else {
+                    System.err.println("Línea no válida: " + line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         do{
             menu = menu(menu);
             switchgeneral(menu, listadungeons);
         }while (menu != 3);
     }
-
     private static void switchgeneral(int menu, dungeon[] listadungeons) throws IOException {
         switch (menu){
             case 1:

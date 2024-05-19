@@ -1,2 +1,4 @@
-Guarida de Onyxxia, Onyxia's Lair, OL, Marjal Revolcafango
-Nucelo de Magma, Molten Core, MC, Tierras de Fuego
+Guarida de Onyxxia;Onyxia's Lair;OL;Marjal Revolcafango;40
+Nucelo de Magma;Molten Core;MC;Las Estepas Ardientes;40
+Zul'Gurub;Zul'Gurub;ZG;Vega de Tuercespina;25
+Guarida de Alanegra;Blackwing Lair;BL;Las Estepas Ardientes;40

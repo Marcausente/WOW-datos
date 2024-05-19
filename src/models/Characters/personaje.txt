@@ -1,1 +1,1 @@
- Nombre: uyuyuy| Nivel: 1| Tipo: Humanoide
+ Nombre: Paco| Nivel: 1| Tipo: Humanoide
