@@ -399,7 +399,7 @@ public class Main {
         System.out.println("9. Brujo");
         menu = input.nextInt();
         switch (menu){
-            case 1:
+            case 1: //Case depende de la seleccion en el menu
                 personaje.setClase("Guerrero");
                 break;
             case 2:
