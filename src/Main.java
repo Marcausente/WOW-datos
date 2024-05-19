@@ -457,6 +457,7 @@ public class Main {
     }
 
     private static int menu(int menu) {
+        //Print menu principal
         String Yellow = "\u001B[33m";
         String green =  "\u001B[32m";
         String resetColorCode = "\u001B[0m";
