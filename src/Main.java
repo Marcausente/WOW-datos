@@ -310,7 +310,7 @@ public class Main {
         }
     }
 
-    private static void elegirfaccion(Player personaje) {
+    private static void elegirfaccion(Player personaje) { //Pequeño menu para elegir la faccion del personaje de la clase player
         Scanner input = new Scanner(System.in);
         int menu = 0;
         System.out.println("Elige la facción del personaje");
@@ -329,7 +329,7 @@ public class Main {
     }
 
     private static void elegirrazaalianza(Player personaje) {
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); //Ya que los personajes de la alizanza y la horda son razas diferentes hacemos dos menus diferentes
         int menu = 0;
         System.out.println("Elige la raza del personaje: ");
         System.out.println("1. Humano");
