@@ -1,1 +1,1 @@
- Nombre: Paco| Nivel: 1| Tipo: Humanoide
+ Nombre: Pepe| Nivel: 1| Tipo: Humanoide

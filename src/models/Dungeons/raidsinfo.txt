@@ -1,4 +1,7 @@
 Guarida de Onyxxia;Onyxia's Lair;OL;Marjal Revolcafango;40
-Nucelo de Magma;Molten Core;MC;Las Estepas Ardientes;40
-Zul'Gurub;Zul'Gurub;ZG;Vega de Tuercespina;25
-Guarida de Alanegra;Blackwing Lair;BL;Las Estepas Ardientes;40
+Nucelo de Magma;Molten Core;MC;Las Garganta de Fuego;40
+Zul'Gurub;Zul'Gurub;ZG;Vega de Tuercespina;20
+Guarida de Alanegra;Blackwing Lair;BL;La Garganta de Fuego;40
+Ruinas de Ahn'Qiraj;Ruins of Ahn'Quiraj;RAQ;Silithus;20
+Templo de Ahn'Qiraj;Temple of Ahn'Quiraj;TAQ;Silithus;40
+Naxxramas;Naxxramas;Nax;Tierras de la Peste del Este;40

@@ -1,4 +1,3 @@
-import com.sun.jdi.request.ExceptionRequest;
 import models.Characters.Player;
 import models.Dungeons.dungeon;
 import models.Dungeons.raid;
@@ -45,41 +44,64 @@ public class Main {
         //Creamos los objetos del Array raid, estos estan en el txt raidsinfo.txt
         String filePath = "C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Dungeons\\raidsinfo.txt";
         List<raid> raids = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\marca\\IdeaProjects\\conceptowow\\src\\models\\Dungeons\\raidsinfo.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] fields = line.split(";");
-                if (fields.length == 5) {
-                    String name = fields[0];
-                    String ingname = fields[1];
-                    String abreviatura = fields[2];
-                    String location = fields[3];
-                    int size = Integer.parseInt(fields[4]);
-                    raid raid = new raid(name, ingname, abreviatura, location, size);
-                    raids.add(raid);
+                String[] raidInfo = line.split(";");
+                if (raidInfo.length == 5) {
+                    raids.add(new raid(raidInfo[0], raidInfo[1], raidInfo[2], raidInfo[3], Integer.parseInt(raidInfo[4])));
                 } else {
-                    System.err.println("Línea no válida: " + line);
+                    System.err.println("Error: La línea no tiene el formato esperado.");
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error al leer el archivo: " + e.getMessage());
         }
-
         do{
             menu = menu(menu);
-            switchgeneral(menu, listadungeons);
-        }while (menu != 3);
+            switchgeneral(menu, listadungeons, raids);
+
+        }while (menu != 4);
     }
-    private static void switchgeneral(int menu, dungeon[] listadungeons) throws IOException {
+    private static void switchgeneral(int menu, dungeon[] listadungeons, List<raid> raids) throws IOException {
         switch (menu){
             case 1:
                 infomazmorras(listadungeons);
                 dardatos(listadungeons, menu);
                 break;
             case 2:
-                createcharacter();
+                inforaids(raids, menu);
+                dardatosraid(raids,menu);
                 break;
             case 3:
+                createcharacter();
+                break;
+            case 4:
+                System.out.println("Saliendo...");
+                break;
+            default:
+                System.out.println("ERROR, introduce un caracter valido");
+        }
+    }
+
+    private static void dardatosraid(List<raid> raids, int menu) {
+        Scanner input = new Scanner(System.in);
+        try{
+            menu = input.nextInt();
+            switch (menu){
+
+
+            }
+        }catch (Exception e){
+            System.out.println();
+        }
+    }
+
+    private static void inforaids(List<raid> raids, int menu) {
+        System.out.println("Información raids wow classic: ");
+        for (int i = 0; i < raids.size(); i++) {
+            raid raid = raids.get(i);
+            System.out.println((i + 1) + ": " + raid.getName());
         }
     }
 
@@ -245,8 +267,9 @@ public class Main {
         System.out.println(Yellow+"       WOW INFO"+resetColorCode);
         System.out.println(green+"======================="+resetColorCode);
         System.out.println("1. Info Mazmorras");
-        System.out.println("2. Creación personaje");
-        System.out.println("3. Salir");
+        System.out.println("2. Info Raids");
+        System.out.println("3. Creación personaje");
+        System.out.println("4. Salir");
         try {
             menu = input.nextInt();
         }catch (Exception a){
