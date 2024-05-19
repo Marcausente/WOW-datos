@@ -322,6 +322,23 @@ public class Main {
         System.out.println("2. Enano");
         System.out.println("3. Gnomo");
         System.out.println("4. Elfo de la noche");
+        menu = input.nextInt();
+        switch (menu){
+            case 1:
+                personaje.setRaza();
+                break;
+            case 2:
+                personaje.setRaza();
+                break;
+            case 3:
+                personaje.setRaza();
+                break;
+            case 4:
+                personaje.setRaza();
+                break;
+            default:
+                System.out.println("ERROR, elige un numero valido");
+        }
     }
 
     private static void elegirrazahorda(Player personaje) {
