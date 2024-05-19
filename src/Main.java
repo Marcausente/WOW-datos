@@ -449,7 +449,7 @@ public class Main {
     }
 
     private static void infomazmorras(dungeon[] listadungeons) {
-
+                //Basicamente printea las mazmorras en un for de 25 y las pone a modo de menu para su seleccion
         System.out.println("Lista de mazmorras wow classic");
         for (int i = 0; i < 25; i++) {
             System.out.println(i+1+". "+listadungeons[i].name);
