@@ -64,7 +64,7 @@ public class Main {
         } while (menu != 4);
     }
 
-    private static void switchgeneral(int menu, dungeon[] listadungeons, List<raid> raids) throws IOException {
+    private static void switchgeneral(int menu, dungeon[] listadungeons, List<raid> raids) throws IOException { //Switch del menu general numero uno
         switch (menu) {
             case 1:
                 infomazmorras(listadungeons);
@@ -85,7 +85,7 @@ public class Main {
         }
     }
 
-    private static void dardatosraid(List<raid> raids, int menu) {
+    private static void dardatosraid(List<raid> raids, int menu) { //Basicamente esto printea los datos de cada raid que gracias al for ves por pantalla
         Scanner input = new Scanner(System.in);
         try {
             menu = input.nextInt();
@@ -121,7 +121,7 @@ public class Main {
     }
 
 
-    private static void datosraid7(List<raid> raids) {
+    private static void datosraid7(List<raid> raids) { //Printea los datos de la raid conforme hayas elegido la siete, y asi constantemente hasta la uno
         raid raid = raids.get(6);
         raid.datosRaid();
     }
@@ -156,7 +156,7 @@ public class Main {
         raid.datosRaid();
     }
 
-    private static void inforaids(List<raid> raids, int menu) {
+    private static void inforaids(List<raid> raids, int menu) { //Esto printea el menu de la raid, mostrando el nombre por pantalla para ver de cual quieres ver datos
         System.out.println("Información raids wow classic: ");
         for (int i = 0; i < raids.size(); i++) {
             raid raid = raids.get(i);
