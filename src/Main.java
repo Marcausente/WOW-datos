@@ -299,10 +299,10 @@ public class Main {
     private static void elegirfaccion(Player personaje) {
         Scanner input = new Scanner(System.in);
         int menu = 0;
-        menu = input.nextInt();
         System.out.println("Elige la facción del personaje");
         System.out.println("1. Alianza");
         System.out.println("2. Horda");
+        menu = input.nextInt();
         if(menu==1){
             personaje.setFaccion("Alianza");
             elegirrazaalianza(personaje);
@@ -325,19 +325,20 @@ public class Main {
         menu = input.nextInt();
         switch (menu){
             case 1:
-                personaje.setRaza();
+                personaje.setRaza("Humano");
                 break;
             case 2:
-                personaje.setRaza();
+                personaje.setRaza("Enano");
                 break;
             case 3:
-                personaje.setRaza();
+                personaje.setRaza("Gnomo");
                 break;
             case 4:
-                personaje.setRaza();
+                personaje.setRaza("Elfo de la noche");
                 break;
             default:
                 System.out.println("ERROR, elige un numero valido");
+                break;
         }
     }
 
@@ -352,19 +353,20 @@ public class Main {
         menu = input.nextInt();
         switch (menu){
             case 1:
-                personaje.setRaza();
+                personaje.setRaza("Orco");
                 break;
             case 2:
-                personaje.setRaza();
+                personaje.setRaza("No-Muerto");
                 break;
             case 3:
-                personaje.setRaza();
+                personaje.setRaza("Tauren");
                 break;
             case 4:
-                personaje.setRaza();
+                personaje.setRaza("Troll");
                 break;
             default:
                 System.out.println("ERROR, elige un numero valido");
+                break;
         }
     }
 

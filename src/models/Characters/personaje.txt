@@ -1,6 +1,6 @@
-Nombre: Manolo
+Nombre: Luis
 Tipo: Humanoide
 Nivel: 1
-Clase: Cazador
-Facción: null
-Raza: null
+Clase: Picaro
+Facción: Alianza
+Raza: Enano
